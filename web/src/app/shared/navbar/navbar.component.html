@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <span>My App</span>
+  <span class="spacer-navbar"></span>
+
+  <button
+    *ngIf="storage.user()?.role === 'remote_control'"
+    mat-button
+    [routerLink]="['/auth/metrics']"
+  >
+    Métricas
+  </button>
+
+  <button
+    *ngIf="storage.isLoggedIn()"
+    mat-button
+    class="example-icon"
+    (click)="logout()"
+  >
+    Cerrar sesión
+  </button>
+</mat-toolbar>

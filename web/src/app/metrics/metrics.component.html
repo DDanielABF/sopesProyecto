@@ -1,0 +1,36 @@
+<div class="metrics-page">
+  <div class="card">
+    <div class="header">
+      <h3>Uso del sistema</h3>
+      <span class="freq">actualiza cada 1s</span>
+    </div>
+
+    <ng-container *ngIf="vm$ | async as vm">
+      <div class="row">
+        <div class="label">CPU</div>
+        <div class="bar">
+          <div
+            class="fill"
+            [ngClass]="color(vm.cpu)"
+            [style.width.%]="vm.cpu"
+          ></div>
+        </div>
+        <div class="value">{{ vm.cpu | number : "1.0-1" }}%</div>
+      </div>
+
+      <div class="row">
+        <div class="label">RAM</div>
+        <div class="bar">
+          <div
+            class="fill"
+            [ngClass]="color(vm.ram)"
+            [style.width.%]="vm.ram"
+          ></div>
+        </div>
+        <div class="value">{{ vm.ram | number : "1.0-1" }}%</div>
+      </div>
+
+      <div class="status" *ngIf="vm.error">⚠️ {{ vm.error }}</div>
+    </ng-container>
+  </div>
+</div>

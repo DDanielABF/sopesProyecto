@@ -1,0 +1,9 @@
+548 common mouse_event sys_mouse_event
+
+549 common get_screen sys_get_screen
+550 common capture_screen sys_capture_screen
+551 common screen_capture sys_screen_capture
+
+552 common send_key_event sys_send_key_event
+553 common send_char_event sys_send_char_event
+554 common get_sys_usage sys_get_sys_usage

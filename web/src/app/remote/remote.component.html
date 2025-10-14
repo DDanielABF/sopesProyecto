@@ -1,0 +1,13 @@
+<div
+  #captureArea
+  class="remote-area"
+  tabindex="0"
+  (focus)="focused = true"
+  (blur)="focused = false"
+  (contextmenu)="$event.preventDefault()"
+>
+  <div class="hint">
+    Área remota — haz clic para enfocar. Mouse: deltas dx,dy. Teclado: mapeo
+    Linux input.
+  </div>
+</div>

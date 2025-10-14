@@ -1,0 +1,49 @@
+<div class="login-page">
+  <mat-card
+    appearance="outlined"
+    class="login-card d-flex justify-content-center aling-items center"
+  >
+    <mat-card-content>
+      <div class="d-flex justify-content-center aling-items center">
+        <form
+          class="d-flex flex-column justify-content-center aling-items-center"
+          [formGroup]="form"
+          (ngSubmit)="login()"
+        >
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              formControlName="username"
+              placeholder="sopes2"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field class="mb-2">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hide() ? 'password' : 'text'"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="showPassword($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()"
+            >
+              <mat-icon>{{
+                hide() ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <div class="form-group mt-4 mb-4 text-center">
+            <button mat-flat-button>Iniciar sesión</button>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
