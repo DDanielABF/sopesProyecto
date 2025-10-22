@@ -1,7 +1,21 @@
 <mat-toolbar>
   <span>My App</span>
   <span class="spacer-navbar"></span>
-
+  <div
+    class="d-flex justify-content-center align-items-center text-white bg-secondary border border-dark rounded px-4 py-2"
+    *ngIf="storage.isLoggedIn()"
+  >
+    <mat-icon class="me-2" style="transform: scale(1.5); color: white"
+      >verified_user</mat-icon
+    >
+    <span class="me-4">
+      {{
+        storage.user()?.role === "remote_control"
+          ? "Acceso Total"
+          : "Acceso Restringido"
+      }}</span
+    >
+  </div>
   <button
     *ngIf="storage.user()?.role === 'remote_control'"
     mat-button
